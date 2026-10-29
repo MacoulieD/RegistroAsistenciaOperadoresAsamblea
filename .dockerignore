@@ -1,0 +1,19 @@
+node_modules
+npm-debug.log*
+# El .env vive en la raíz y en src/: ninguno entra a la imagen
+**/.env
+**/.env.*
+!**/*.example
+.git
+.gitignore
+.gitattributes
+*.log
+tests/
+db/
+notas.txt
+*.bat
+web.config
+deploy-asistencia.sh
+Dockerfile
+.dockerignore
+docker-compose.yml

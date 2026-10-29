@@ -1,0 +1,21 @@
+# Despliega RegistroAsistenciaOperadoresAsamblea de forma independiente — un
+# repo, un servicio, igual que AdminPoderes, PreRegistroPoderes y
+# AceptacionPoderes. El .env real nunca se copia dentro de la imagen, solo
+# se inyecta al arrancar el contenedor. La base de datos SQL Server es
+# externa: no se levanta acá.
+
+services:
+  asistencia-operadores:
+    build:
+      context: .
+    container_name: asistencia-operadores
+    env_file:
+      - .env
+    ports:
+      - "30023:30023"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "1.0"

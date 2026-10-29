@@ -1,0 +1,3 @@
+# deploy-asistencia.sh corre en el VPS (Linux); si Windows lo guarda con CRLF,
+# el script se rompe ahí (el shebang y los comandos quedan con \r de más).
+*.sh text eol=lf
