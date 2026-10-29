@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Consulta de Asistencias</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-brand">
+      <div class="header-logo">
+        <img src="/logo%20IST.png" alt="Logo ESTRUCTURA IST" class="header-logo-img">
+      </div>
+      <div>
+        <h1>Consulta de Asistencias</h1>
+        <div class="subtitle">Panel de administración</div>
+      </div>
+    </div>
+    <a href="/seleccionar-bd.html" class="btn-icon">← Volver</a>
+  </header>
+
+  <div class="container-wide">
+
+    <!-- Filtros -->
+    <div class="filters-card">
+      <div class="filters-grid">
+        <div class="form-group mb-0">
+          <label for="filtroFechaInicio">Fecha inicio</label>
+          <input type="date" id="filtroFechaInicio" class="form-control">
+        </div>
+        <div class="form-group mb-0">
+          <label for="filtroFechaFin">Fecha fin</label>
+          <input type="date" id="filtroFechaFin" class="form-control">
+        </div>
+        <div class="form-group mb-0">
+          <label for="filtroOperador">Operador</label>
+          <select id="filtroOperador" class="form-control">
+            <option value="">Todos los operadores</option>
+          </select>
+        </div>
+        <div class="form-group mb-0">
+          <label for="filtroBase">Asamblea</label>
+          <select id="filtroBase" class="form-control">
+            <option value="">Todas las asambleas</option>
+          </select>
+        </div>
+      </div>
+      <div class="filters-actions">
+        <button class="btn btn-primary" id="btnBuscar">🔍 Buscar</button>
+        <button class="btn btn-secondary" id="btnLimpiar">✕ Limpiar filtros</button>
+        <button class="btn btn-secondary" id="btnExportar">📊 Exportar Excel</button>
+      </div>
+    </div>
+
+    <!-- Tabla de resultados -->
+    <div class="table-container">
+      <div class="table-header">
+        <span class="table-title">Registros de asistencia</span>
+        <span class="count-badge" id="contadorRegistros">0</span>
+      </div>
+      <div id="tablaContenido">
+        <div class="loading-state"><p>Cargando registros...</p></div>
+      </div>
+      <div class="paginacion" id="paginacion" style="display:none;">
+        <div class="paginacion-tamano">
+          <label for="tamanoPagina">Mostrar</label>
+          <select id="tamanoPagina" class="form-control tamano-pagina">
+            <option value="10">10</option>
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+          <span>por página</span>
+        </div>
+        <span class="paginacion-info" id="paginacionInfo"></span>
+        <nav class="paginacion-botones" id="paginacionBotones" aria-label="Paginación"></nav>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Modal de evidencia fotográfica -->
+  <div class="modal-overlay" id="modalFoto">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3>Evidencia fotográfica</h3>
+        <button class="modal-close" id="cerrarModal" aria-label="Cerrar">×</button>
+      </div>
+      <div class="modal-body">
+        <div id="modalCargando" style="text-align:center; padding: 24px; color: var(--text-muted);">
+          Cargando imagen...
+        </div>
+        <img id="modalImagen" src="" alt="Evidencia fotográfica" style="display:none;">
+        <div class="modal-info" id="modalInfo" style="display:none;">
+          <p><strong id="modalOperador"></strong></p>
+          <p id="modalFecha"></p>
+          <p id="modalAsamblea"></p>
+          <p id="modalNovedad" style="display:none; color:#4a5568;"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/shared/formatFecha.js"></script>
+  <script src="/shared/paginasVisibles.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

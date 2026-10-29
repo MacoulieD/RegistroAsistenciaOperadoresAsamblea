@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acceso - Registro de Asistencia</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <!-- Contenedor principal de la pantalla de login -->
+  <div class="login-wrapper">
+    <div class="login-card">
+
+      <!-- Logo y texto de la aplicación -->
+      <div class="login-logo">
+        <img src="/logo%20IST.png" alt="Logo ESTRUCTURA IST" class="home-logo">
+        <h2>Registro de Asistencia</h2>
+        <p>Operadores de Asambleas</p>
+      </div>
+
+      <!-- Formulario de login que envía datos al backend -->
+      <form id="formLogin" novalidate>
+        <div class="form-group">
+          <label for="codigo">Código de usuario</label>
+          <input
+            type="text"
+            id="codigo"
+            class="form-control"
+            placeholder="Ingrese su código"
+            autocomplete="username"
+            autocapitalize="none"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="clave">Clave</label>
+          <input
+            type="password"
+            id="clave"
+            class="form-control"
+            placeholder="Ingrese su clave"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <!-- reCAPTCHA integrado mediante sitekey -->
+        <div class="form-group">
+          <div class="g-recaptcha" data-sitekey="6LctohgjAAAAAFDWtVSDc-sTyIegSjF2bwuATGqz"></div>
+        </div>
+
+        <!-- Alertas de error del login -->
+        <div id="alertLogin" class="alert alert-danger"></div>
+
+        <button type="submit" class="btn btn-primary mt-16" id="btnLogin">
+          Ingresar
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Script de Google reCAPTCHA y lógica de login local -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="/js/login.js"></script>
+</body>
+</html>

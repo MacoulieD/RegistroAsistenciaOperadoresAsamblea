@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Registrar Asistencia</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-brand">
+      <div class="header-logo">
+        <img src="/logo%20IST.png" alt="Logo ESTRUCTURA IST" class="header-logo-img">
+      </div>
+      <div>
+        <h1>Evidencia Fotográfica</h1>
+        <div class="subtitle">Registro de llegada</div>
+      </div>
+    </div>
+    <button class="btn-icon" id="btnVolver">← Volver</button>
+  </header>
+
+  <div class="container">
+    <div class="card" style="margin-bottom: 0;">
+
+      <!-- Asamblea seleccionada -->
+      <div class="bd-badge">
+        <span style="font-size: 1.4rem;">🏛️</span>
+        <div>
+          <div class="label">Asamblea seleccionada</div>
+          <div class="value" id="nombreBD">Cargando...</div>
+        </div>
+      </div>
+
+      <!-- Área de captura de foto -->
+      <div id="photoArea" class="photo-area">
+        <div class="photo-icon">📷</div>
+        <p><strong>Tomar foto o seleccionar imagen</strong></p>
+        <p class="hint">Pulse aquí para activar la cámara</p>
+        <!-- capture="environment" abre la cámara trasera en móviles -->
+        <input type="file" id="fotoInput" accept="image/*" capture="environment">
+      </div>
+
+      <!-- Vista previa de la foto -->
+      <div class="preview-container" id="previewContainer">
+        <img id="previewImg" src="" alt="Evidencia fotográfica">
+        <div class="preview-actions">
+          <button class="btn btn-secondary" id="btnCambiarFoto">🔄 Cambiar foto</button>
+        </div>
+      </div>
+
+      <!-- Campo de novedad -->
+      <div class="mt-16">
+        <label for="novedadInput" style="display:block; font-size:0.85rem; font-weight:600; color:#4a5568; margin-bottom:6px;">Novedad <span style="font-weight:400; color:#9ca3af;">(opcional)</span></label>
+        <textarea id="novedadInput" maxlength="2000" rows="3" placeholder="Ingrese una novedad o comentario..." style="width:100%; padding:10px 12px; border:1.5px solid #d1d5db; border-radius:8px; font-size:0.95rem; resize:vertical; font-family:inherit; box-sizing:border-box;"></textarea>
+      </div>
+
+      <!-- Mensaje de estado -->
+      <div id="alertRegistro" class="alert"></div>
+
+      <!-- Botón de registro -->
+      <button class="btn btn-success mt-16" id="btnRegistrar" disabled>
+        ✅ Registrar Asistencia
+      </button>
+
+    </div>
+  </div>
+
+  <script src="/js/registro.js"></script>
+</body>
+</html>

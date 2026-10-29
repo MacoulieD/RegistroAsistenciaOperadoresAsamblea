@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seleccionar Asamblea - Registro de Asistencia</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-brand">
+      <div class="header-logo">
+        <img src="/logo%20IST.png" alt="Logo ESTRUCTURA IST" class="header-logo-img">
+      </div>
+      <div>
+        <h1>Registro de Asistencia</h1>
+        <div class="subtitle" id="headerSubtitle">Cargando...</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <a href="/admin.html" class="btn-icon" id="btnAdmin" style="display:none;">
+        📊 Consultas
+      </a>
+      <button class="btn-icon" id="btnLogout">⬅ Salir</button>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="welcome-banner">
+      <h2>Bienvenido, <span id="nombreOperador">...</span></h2>
+      <p>Seleccione la asamblea a la que está asignado hoy</p>
+    </div>
+
+    <!-- Estado cargando -->
+    <div id="loadingBases" class="card text-center">
+      <p style="color: var(--text-muted); padding: 12px 0;">Cargando asambleas...</p>
+    </div>
+
+    <!-- Lista de bases activas -->
+    <div id="listaBases" class="db-grid" style="display:none;"></div>
+
+    <!-- Sin asambleas asignadas -->
+    <div id="sinBases" class="card text-center" style="display:none;">
+      <p style="color: var(--text-muted); font-size: 0.9rem; padding: 12px 0;">
+        No tiene asambleas asignadas. Contacte al administrador.
+      </p>
+    </div>
+
+    <!-- Error de carga -->
+    <div id="errorBases" class="alert alert-danger" style="margin-top: 0;"></div>
+
+  </div>
+
+  <script src="/js/seleccionar-bd.js"></script>
+</body>
+</html>

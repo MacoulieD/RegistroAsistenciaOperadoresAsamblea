@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 340" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Logo ESTRUCTURA IST</title>
+  <defs>
+    <linearGradient id="bgGradient" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#041b45"/>
+      <stop offset="100%" stop-color="#061a46"/>
+    </linearGradient>
+    <linearGradient id="overlayFade" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.36"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" fill="url(#bgGradient)"/>
+  <g transform="translate(0,30)">
+    <polygon fill="#f0e600" points="150,10 263,120 150,155 37,120"/>
+    <polygon fill="#2aa235" points="37,120 12,160 150,270 150,155"/>
+    <polygon fill="#2ea3f2" points="263,120 288,160 150,270 150,155"/>
+    <path d="M37 120 L150 155 L12 160 Z" fill="#163d48" opacity="0.16"/>
+    <path d="M263 120 L150 155 L288 160 Z" fill="#0f2a4b" opacity="0.16"/>
+    <line x1="150" y1="10" x2="150" y2="155" stroke="#05172f" stroke-width="4" opacity="0.18"/>
+    <line x1="37" y1="120" x2="263" y2="120" stroke="#05172f" stroke-width="4" opacity="0.18"/>
+  </g>
+  <g transform="translate(0,200) scale(1,-1)" opacity="0.24">
+    <polygon fill="#f0e600" points="150,10 263,120 150,155 37,120"/>
+    <polygon fill="#2aa235" points="37,120 12,160 150,270 150,155"/>
+    <polygon fill="#2ea3f2" points="263,120 288,160 150,270 150,155"/>
+  </g>
+  <rect x="0" y="200" width="300" height="100" fill="url(#overlayFade)"/>
+  <text x="150" y="325" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#edf5ff" font-weight="700">ESTRUCTURA IST</text>
+  <text x="150" y="342" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#aac7ed">COMPUTER &amp; TECHNOLOGY SERVICES</text>
+</svg>
