@@ -150,14 +150,16 @@
           return;
         }
 
-        mostrarMensaje('success', '✅ Asistencia registrada correctamente. Redirigiendo...');
-        btn.innerHTML = '✅ Registrado';
+        mostrarMensaje('success', '✅ Asistencia registrada correctamente.');
 
-        // Limpiar y regresar tras 2 segundos
-        setTimeout(function () {
-          sessionStorage.removeItem('bdSeleccionada');
-          window.location.href = '/seleccionar-bd.html';
-        }, 2000);
+        // Se queda en la confirmación: el operador sigue hacia Asambleas
+        // o vuelve a elegir otra asamblea; ya no puede reenviar el mismo registro.
+        sessionStorage.removeItem('bdSeleccionada');
+        btn.style.display = 'none';
+        document.getElementById('btnCambiarFoto').style.display = 'none';
+        document.getElementById('novedadInput').disabled = true;
+        document.getElementById('accionesPostRegistro').style.display = 'block';
+        document.getElementById('btnIrAsambleas').focus();
 
       } catch (err) {
         mostrarMensaje('danger', 'Error de conexión. Verifique su red e intente nuevamente.');
