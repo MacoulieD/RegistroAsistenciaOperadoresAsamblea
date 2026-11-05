@@ -3,6 +3,7 @@ const { sql, getPool } = require('../shared/config/db');
 const { esUsuarioActivo, esAdmin } = require('../shared/middlewares/auth');
 const { obtenerBasesPermitidas } = require('../bases/basesService');
 const { verifyRecaptcha } = require('./recaptcha');
+const { INACTIVIDAD_MS } = require('../shared/config/sesion');
 
 const router = express.Router();
 
@@ -117,7 +118,8 @@ router.get('/sesion', (req, res) => {
     nombre: u.Nombre,
     codigo: u.Codigo,
     codigoGrupo: u.CodigoGrupo,
-    esAdmin: esAdministrador
+    esAdmin: esAdministrador,
+    inactividadMs: INACTIVIDAD_MS
   });
 });
 

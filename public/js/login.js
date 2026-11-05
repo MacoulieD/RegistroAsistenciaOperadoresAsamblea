@@ -30,6 +30,12 @@
     alertEl.className = 'alert';
   }
 
+  // Llega aquí desde inactividad.js cuando la sesión venció
+  if (new URLSearchParams(window.location.search).get('inactividad')) {
+    alertEl.textContent = 'Su sesión se cerró por inactividad. Ingrese nuevamente.';
+    alertEl.className = 'alert alert-info show';
+  }
+
   // Controlador de envío del formulario de login
   form.addEventListener('submit', async function (e) {
     e.preventDefault();

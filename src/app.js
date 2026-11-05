@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 const apiRoutes = require('./routes');
+const { INACTIVIDAD_MS } = require('./shared/config/sesion');
 
 const app = express();
 
@@ -15,15 +16,18 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 // Código compartido entre backend y frontend (ej. formato de fechas)
 app.use('/shared', express.static(path.join(__dirname, '..', 'shared')));
 
-// Configuración de sesión para mantener login del usuario
+// Configuración de sesión para mantener login del usuario.
+// rolling renueva el vencimiento en cada petición: la sesión se cierra
+// tras INACTIVIDAD_MS sin actividad, no a un tiempo fijo desde el login.
 app.use(session({
   secret: process.env.SESSION_SECRET || 'asamblea-key-default',
   resave: false,
   saveUninitialized: false,
+  rolling: true,
   cookie: {
     httpOnly: true,
     secure: false,
-    maxAge: 8 * 60 * 60 * 1000 // 8 horas
+    maxAge: INACTIVIDAD_MS
   }
 }));
 

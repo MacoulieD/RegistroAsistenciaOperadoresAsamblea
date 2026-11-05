@@ -650,6 +650,28 @@ tbody td { padding: 11px 14px; vertical-align: middle; }
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* ─── AVISO DE INACTIVIDAD ───────────────────────────────────────────────────── */
+.aviso-inactividad {
+  display: none;
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 460px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #fff8e6;
+  color: #7a5200;
+  border-left: 4px solid #e0a100;
+  border-radius: 12px;
+  box-shadow: var(--shadow-strong);
+  font-size: 0.9rem;
+  font-weight: 600;
+  z-index: 1000;
+}
+
 /* ─── UTILIDADES ─────────────────────────────────────────────────────────────── */
 .mt-16 { margin-top: 16px; }
 .mb-0  { margin-bottom: 0; }
